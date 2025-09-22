@@ -32,6 +32,10 @@ pipeline {
     }
   }
 
+  triggers {
+        githubPush()
+  }
+
   environment {
     APP_NAME = 'open-vsx-org'
     NAMESPACE = 'open-vsx-org'
