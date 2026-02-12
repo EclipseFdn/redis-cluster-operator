@@ -122,7 +122,7 @@ spec:
               echo "user $REPLICA_USERNAME on >$REPLICA_PASSWORD ~* +psync +replconf +ping" > /etc/redis-acl/users.acl
               echo "user $CLI_USERNAME on >$CLI_PASSWORD ~* +ping +cluster +info +dbsize" >> /etc/redis-acl/users.acl
               echo "user $METRICS_USERNAME on >$METRICS_PASSWORD ~* +client +ping +info +config|get +cluster|info +cluster|slots +slowlog +latency +memory +select +get +scan +xinfo +type +pfcount +strlen +llen +scard +zcard +hlen +xlen +eval allkeys" >> /etc/redis-acl/users.acl
-              echo "user $OPENVSX_USERNAME on >$OPENVSX_PASSWORD ~* allchannels +@all -@admin -@dangerous -@slow -function +client +cluster +keys +eval +set +psetex +del +unlink +hscan" >> /etc/redis-acl/users.acl
+              echo "user $OPENVSX_USERNAME on >$OPENVSX_PASSWORD ~* allchannels +@all -@admin -@dangerous -@slow -function +client +cluster +keys +eval +set +psetex +del +unlink +subscribe +hscan" >> /etc/redis-acl/users.acl
           volumeMounts:
             - name: "{acl_name}"
               mountPath: /etc/redis-acl
